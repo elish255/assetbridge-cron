@@ -1,0 +1,13 @@
+name: AssetBridge Profit Cron
+
+on:
+  workflow_dispatch:
+
+jobs:
+ run-cron:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Call Profit Cron
+        run: |
+          curl -v -L "https://assetbridge.site.je/profit_cron.php?key=AB_2026_x9K4LmP81"
