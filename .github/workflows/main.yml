@@ -1,0 +1,17 @@
+name: AssetBridge Profit Cron
+
+on:
+  schedule:
+    # Kila siku saa 10:50 AM Tanzania (07:50 UTC)
+    - cron: '50 7 * * *'
+
+  workflow_dispatch:
+
+jobs:
+  run-cron:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Call Profit Cron
+        run: |
+          curl -L "https://assetbridge.site.je/profit_cron.php?key=AB_2026_x9K4LmP81"
